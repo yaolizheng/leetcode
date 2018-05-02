@@ -22,6 +22,33 @@ def spiral(t):
     return res
 
 
+def spiral2(t):
+    n = len(t)
+    l = n - 1
+    i = j = 0
+    res = []
+    while l > 0:
+        for _ in range(l):
+            res.append(t[i][j])
+            j += 1
+        for _ in range(l):
+            res.append(t[i][j])
+            i += 1
+        for _ in range(l):
+            res.append(t[i][j])
+            j -= 1
+        for _ in range(l):
+            res.append(t[i][j])
+            i -= 1
+        l -= 2
+        i += 1
+        j += 1
+    if l == 0:
+        res.append(t[i][j])
+    return res
+
+
 if __name__ == '__main__':
     t = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
     print spiral(t)
+    print spiral2(t)
