@@ -21,7 +21,18 @@ def bitwise_and(n):
     return res
 
 
+def bitwise_and2(n):
+    a = n[0]
+    b = n[1]
+    i = 0
+    while a != b:
+        a >>= 1
+        b >>= 1
+        i += 1
+    return a << i
+
+
 if __name__ == '__main__':
     # n = [5, 7]
     n = [0, 1]
-    print bitwise_and(n)
+    print bitwise_and2(n)

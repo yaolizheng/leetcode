@@ -1,6 +1,6 @@
 def paint_house(n):
     res = n
-    for i in range(2, len(n)):
+    for i in range(1, len(n)):
         res[i][0] += min(res[i - 1][1], res[i - 1][2])
         res[i][1] += min(res[i - 1][2], res[i - 1][0])
         res[i][2] += min(res[i - 1][0], res[i - 1][1])
